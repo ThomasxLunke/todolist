@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"	
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+		<title> Connexion </title>
+		<meta charset="UTF-8">
+	</head>
+	<body background="/image/imageFond.jpg" style="background-size: cover; background-attachment: fixed;">
+		<div style="background-color:white ; border-style: inset; " >
+			<div th:if="${param.error}">
+				Mauvais login ou mot de passe.
+			</div>
+			<div th:if="${param.logout}">
+				 Vous avez été déconnecté
+			</div>
+			<form th:action="@{/}" method="get">
+				<div> <label> User Name : <input type="text" name="login"/> </label></div>
+				<div> <label> Password : <input type="text" name="mdp"/> </label></div>
+				<div> <input type="submit" value="Connexion"/></div>	
+			</form>
+		</div>
+	</body>	
+</html>
